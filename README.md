@@ -24,3 +24,7 @@ https://github.com/basiclab/DA-OD-MEAA-PyTorch
 https://github.com/Megvii-Nanjing/CR-DA-DET
 
 https://github.com/naoto0804/cross-domain-detection
+
+https://github.com/VisionLearningGroup/DA_Detection
+
+https://github.com/harsh-99/SCL
