@@ -13,6 +13,12 @@ python setup.py clean
 python setup.py install
 
 
+遇到这类问题
+
+Training error. bg_num_rois = 0 and fg_num_rois = 0, this should not happen!
+
+https://github.com/jwyang/faster-rcnn.pytorch/issues/594#issuecomment-520275871
+
 
 相关资源代码资源
 
