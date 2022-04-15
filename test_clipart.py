@@ -6,7 +6,7 @@ dataset = "clipart"
 begin_epoch = 6
 end_epoch = 12
 
-model_prefix = "clipart/model/clipart_"
+model_prefix = "/data/experiments/DA_Faster_ICR_CCR/clipart/model/clipart_"
 
 commond = "python eval/test.py --net {} --cuda --dataset {} --part {} --model_dir {}".format(net, dataset, part, model_prefix)
 

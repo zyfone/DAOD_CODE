@@ -40,7 +40,7 @@ class cityscape(imdb):
         imdb.__init__(self, "cityscape_" + year + "_" + image_set)
         self._year = year
         self._image_set = image_set
-
+        
         self._devkit_path = (
             self._get_default_path() if devkit_path is None else devkit_path
         )
@@ -136,7 +136,9 @@ class cityscape(imdb):
         """
         Return the default path where PASCAL VOC is expected to be installed.
         """
-        return os.path.join("/home/zyfone/data/cross_data", "cityscape")
+        
+        # return os.path.join(cfg.DATA_DIR, "cityscape")
+        return os.path.join("/home/zyf/data/cityscape/")
 
     def gt_roidb(self):
         """

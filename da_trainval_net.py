@@ -491,15 +491,15 @@ if __name__ == "__main__":
         )
     elif args.net == "res101":
         fasterRCNN = resnet(
-            s_imdb.classes, 101, pretrained=True, class_agnostic=args.class_agnostic
+            s_imdb.classes, 101, pretrained=True, class_agnostic=args.class_agnostic,pretrained_path=args.pretrained_path
         )
     elif args.net == "res50":
         fasterRCNN = resnet(
-            s_imdb.classes, 50, pretrained=True, class_agnostic=args.class_agnostic
+            s_imdb.classes, 50, pretrained=True, class_agnostic=args.class_agnostic,pretrained_path=args.pretrained_path
         )
     elif args.net == "res152":
         fasterRCNN = resnet(
-            s_imdb.classes, 152, pretrained=True, class_agnostic=args.class_agnostic
+            s_imdb.classes, 152, pretrained=True, class_agnostic=args.class_agnostic,pretrained_path=args.pretrained_path
         )
     else:
         print("network is not defined")
@@ -584,31 +584,22 @@ if __name__ == "__main__":
                 data_iter_t = iter(t_dataloader)
                 tgt_data = next(data_iter_t)
 
-            # im_data.data.resize_(data[0].size()).copy_(data[0])  # change holder size
-            # im_info.data.resize_(data[1].size()).copy_(data[1])
-            # im_cls_lb.data.resize_(data[2].size()).copy_(data[2])
-            # gt_boxes.data.resize_(data[3].size()).copy_(data[3])
-            # num_boxes.data.resize_(data[4].size()).copy_(data[4])
-            # need_backprop.data.resize_(data[5].size()).copy_(data[5])
-            im_data.resize_(data[0].size()).copy_(data[0])  # change holder size
-            im_info.resize_(data[1].size()).copy_(data[1])
-            im_cls_lb.resize_(data[2].size()).copy_(data[2])
-            gt_boxes.resize_(data[3].size()).copy_(data[3])
-            num_boxes.resize_(data[4].size()).copy_(data[4])
-            need_backprop.resize_(data[5].size()).copy_(data[5])
-            tgt_im_data.resize_(tgt_data[0].size()).copy_(
+            im_data.data.resize_(data[0].size()).copy_(data[0])  # change holder size
+            im_info.data.resize_(data[1].size()).copy_(data[1])
+            im_cls_lb.data.resize_(data[2].size()).copy_(data[2])
+            gt_boxes.data.resize_(data[3].size()).copy_(data[3])
+            num_boxes.data.resize_(data[4].size()).copy_(data[4])
+            need_backprop.data.resize_(data[5].size()).copy_(data[5])
+
+            tgt_im_data.data.resize_(tgt_data[0].size()).copy_(
                 tgt_data[0]
             )  # change holder size
-            # tgt_im_info.data.resize_(tgt_data[1].size()).copy_(tgt_data[1])
-            # tgt_im_cls_lb.data.resize_(data[2].size()).copy_(data[2])
-            # tgt_gt_boxes.data.resize_(tgt_data[3].size()).copy_(tgt_data[3])
-            # tgt_num_boxes.data.resize_(tgt_data[4].size()).copy_(tgt_data[4])
-            # tgt_need_backprop.data.resize_(tgt_data[5].size()).copy_(tgt_data[5])
-            tgt_im_info.resize_(tgt_data[1].size()).copy_(tgt_data[1])
-            tgt_im_cls_lb.resize_(data[2].size()).copy_(data[2])
-            tgt_gt_boxes.resize_(tgt_data[3].size()).copy_(tgt_data[3])
-            tgt_num_boxes.resize_(tgt_data[4].size()).copy_(tgt_data[4])
-            tgt_need_backprop.resize_(tgt_data[5].size()).copy_(tgt_data[5])
+            tgt_im_info.data.resize_(tgt_data[1].size()).copy_(tgt_data[1])
+            tgt_im_cls_lb.data.resize_(data[2].size()).copy_(data[2])
+            tgt_gt_boxes.data.resize_(tgt_data[3].size()).copy_(tgt_data[3])
+            tgt_num_boxes.data.resize_(tgt_data[4].size()).copy_(tgt_data[4])
+            tgt_need_backprop.data.resize_(tgt_data[5].size()).copy_(tgt_data[5])
+
             """   faster-rcnn loss + DA loss for source and   DA loss for target    """
             fasterRCNN.zero_grad()
             (

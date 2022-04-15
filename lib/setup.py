@@ -11,11 +11,6 @@ from torch.utils.cpp_extension import CUDA_HOME, CppExtension, CUDAExtension
 
 requirements = ["torch", "torchvision"]
 
-import numpy as np
-try:
-    numpy_include = np.get_include() 
-except AttributeError: 
-    numpy_include = np.get_numpy_include()
 
 def get_extensions():
     this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -55,7 +50,7 @@ def get_extensions():
             extra_compile_args=extra_compile_args,
         )
     ]
-    
+
     return ext_modules
 
 
@@ -64,7 +59,7 @@ setup(
     version="0.1",
     description="object detection in pytorch",
     packages=find_packages(exclude=("configs", "tests")),
-    install_requires=requirements,
+    # install_requires=requirements,
     ext_modules=get_extensions(),
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
 )

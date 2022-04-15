@@ -7,8 +7,7 @@ import pickle
 import pprint
 import sys
 import time
-import sys
-sys.path.append("/home/zyfone/code/DA_Faster_ICR_CCR/")
+
 import _init_paths
 import cv2
 import numpy as np
@@ -30,8 +29,7 @@ from roi_data_layer.roidb import combined_roidb
 from torch.autograd import Variable
 
 try:
-    # xrange  # Python 2
-    xrange = range
+    xrange  # Python 2
 except NameError:
     xrange = range  # Python 3
 
@@ -200,8 +198,8 @@ if __name__ == "__main__":
     elif args.dataset == "clipart":
         print("loading our dataset...........")
         args.s_imdb_name = "voc_2007_trainval+voc_2012_trainval"
-        args.t_imdb_name = "clipart_test"
-        args.t_imdbtest_name = "clipart_test"
+        args.t_imdb_name = "clipart_trainval"
+        args.t_imdbtest_name = "clipart_trainval"
         args.set_cfgs = [
             "ANCHOR_SCALES",
             "[8,16,32]",
@@ -407,14 +405,11 @@ if __name__ == "__main__":
     for i in range(num_images):
 
         data = next(data_iter)
-        # im_data.data.resize_(data[0].size()).copy_(data[0])
-        # im_info.data.resize_(data[1].size()).copy_(data[1])
-        # gt_boxes.data.resize_(data[2].size()).copy_(data[2])
-        # num_boxes.data.resize_(data[3].size()).copy_(data[3])
-        im_data.resize_(data[0].size()).copy_(data[0])
-        im_info.resize_(data[1].size()).copy_(data[1])
-        gt_boxes.resize_(data[2].size()).copy_(data[2])
-        num_boxes.resize_(data[3].size()).copy_(data[3])
+        im_data.data.resize_(data[0].size()).copy_(data[0])
+        im_info.data.resize_(data[1].size()).copy_(data[1])
+        gt_boxes.data.resize_(data[2].size()).copy_(data[2])
+        num_boxes.data.resize_(data[3].size()).copy_(data[3])
+
         det_tic = time.time()
         (
             rois,

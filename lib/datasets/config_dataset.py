@@ -12,13 +12,13 @@ cfg_d = __D
 #
 # Training options
 # with regard to pascal, the directories under the path will be ./VOC2007, ./VOC2012"
-__D.PASCAL = "/home/zyfone/data/VOCdevkit"
+__D.PASCAL ="/home/zyf/data/VOCdevkit/"
 __D.PASCALCLIP = ""
 __D.PASCALWATER = "/data/datasets/DA_new/VOCdevkit"
 
 # For these datasets, the directories under the path will be Annotations  ImageSets  JPEGImages."
-__D.CLIPART = "/home/zyfone/data/cross_data/clipart"
-__D.WATER = "/home/zyfone/data/cross_data/watercolor"
+__D.CLIPART = "/home/zyf/data/clipart/VOC2007"
+__D.WATER = "/data/datasets/DA_new/watercolor"
 
 
 def _merge_a_into_b(a, b):
