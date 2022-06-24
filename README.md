@@ -42,3 +42,9 @@ https://github.com/thuml/Transfer-Learning-Library/tree/dev-tllib/examples/domai
 
 https://github.com/dliu5812/DDF
 
+
+
+
+# cityscape
+准备相关数据集的代码
+https://github.com/uitrbn/CST_DA_detection
