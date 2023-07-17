@@ -52,6 +52,6 @@ https://github.com/MCG-NJU/TIA
 https://github.com/uitrbn/CST_DA_detection
 
 
-##遇到梯度爆炸的时候如何解决
+# 遇到梯度爆炸的时候如何解决
 
 https://github.com/tiancity-NJU/da-faster-rcnn-PyTorch/issues/17
