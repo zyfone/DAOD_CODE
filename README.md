@@ -44,6 +44,7 @@ https://github.com/dliu5812/DDF
 
 https://github.com/MCG-NJU/TIA
 
+https://github.com/jinlong17/DA-Detect Foggy: 42.3mAP
 
 
 
